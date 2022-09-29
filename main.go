@@ -1,25 +1,30 @@
 package main // must have func main!
 
+import (
+	"learning/stephen"
+	"os"
+)
+
 func main() {
 
-	//checkEvenOdd()
-	//
-	//printArray()
-	//
-	//executeDeck(newDeck())
-	//
-	//printPeople()
-	//
-	//printMap(getDefaultMap())
-	//
-	//printBot(chineseBot{})
-	//printBot(englishBot{})
-	//
-	//getUrl("https://google.com")
-	//
-	//testInterface()
-	//
-	//readFile(os.Args[1])
+	stephen.CheckEvenOdd()
 
-	testChannel()
+	stephen.PrintArray()
+
+	stephen.ExecuteDeck(stephen.NewDeck())
+
+	stephen.PrintPeople()
+
+	stephen.PrintMap(stephen.GetDefaultMap())
+
+	stephen.PrintBot(stephen.ChineseBot{})
+	stephen.PrintBot(stephen.EnglishBot{})
+
+	stephen.GetUrl("https://google.com")
+
+	stephen.TestInterface()
+
+	stephen.ReadFile(os.Args[1])
+
+	stephen.TestChannel()
 }

@@ -1,4 +1,4 @@
-package main
+package stephen
 
 import (
 	"fmt"
@@ -8,21 +8,21 @@ import (
 	"time"
 )
 
-type deck []string
+type Deck []string
 
-func executeDeck(cards deck) {
+func ExecuteDeck(cards Deck) {
 	hand, remainingCards := deal(cards, 5)
 	hand.print()
 	fmt.Println("---")
 	remainingCards.shuffle()
 	fmt.Println(remainingCards.toString())
 
-	papers := deck{"Paper 1"}
+	papers := Deck{"Paper 1"}
 	papers.print()
 }
 
-func newDeck() deck {
-	cards := deck{}
+func NewDeck() Deck {
+	cards := Deck{}
 	suits := []string{"Spades", "Clubs", "Hearts", "Diamonds"}
 	values := []string{"Ace", "Two", "Three", "Four"}
 	for _, suit := range suits {
@@ -33,25 +33,25 @@ func newDeck() deck {
 	return cards
 }
 
-func (d deck) print() {
+func (d Deck) print() {
 	for i, element := range d {
 		fmt.Println(i, element)
 	}
 }
 
-func deal(d deck, handSize int) (deck, deck) {
+func deal(d Deck, handSize int) (Deck, Deck) {
 	return d[:handSize], d[handSize:]
 }
 
-func (d deck) toString() string {
+func (d Deck) toString() string {
 	return strings.Join([]string(d), ",")
 }
 
-func (d deck) saveToFile(fileName string) error {
+func (d Deck) saveToFile(fileName string) error {
 	return os.WriteFile(fileName, []byte(d.toString()), 0666)
 }
 
-func (d deck) shuffle() {
+func (d Deck) shuffle() {
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 	for i := range d {

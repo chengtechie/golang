@@ -1,4 +1,4 @@
-package main
+package stephen
 
 import "fmt"
 
@@ -20,7 +20,7 @@ func (p *person) print() {
 	fmt.Printf("%+v", *p)
 }
 
-func printPeople() {
+func PrintPeople() {
 	var human2 person
 	human2.firstName = "Kim"
 	human2.lastName = "Hor"

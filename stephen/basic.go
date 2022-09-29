@@ -1,4 +1,4 @@
-package main
+package stephen
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 
 var size int // init first assign later
 
-func printArray() {
+func PrintArray() {
 	fmt.Println("")
 	size = 5
 	fmt.Println(size)
@@ -18,7 +18,7 @@ func printArray() {
 	fmt.Println(elements)
 }
 
-func checkEvenOdd() {
+func CheckEvenOdd() {
 	for i := 0; i <= 10; i++ {
 		if i%2 == 0 {
 			fmt.Printf("%d is even, ", i)
@@ -28,10 +28,14 @@ func checkEvenOdd() {
 	}
 }
 
-func readFile(fileName string) {
-	dat, err := os.ReadFile(fileName)
-	if err != nil {
-		fmt.Print(err)
+func ReadFile(fileName string) {
+	curr, err1 := os.Getwd()
+	if err1 != nil {
+		fmt.Print(err1)
 	}
-	fmt.Print(string(dat))
+	dat, err2 := os.ReadFile(curr + "/stephen/data/" + fileName)
+	if err2 != nil {
+		fmt.Print(err2)
+	}
+	fmt.Print(string(dat) + "\n")
 }

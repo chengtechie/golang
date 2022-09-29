@@ -1,4 +1,4 @@
-package main
+package stephen
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func testChannel() {
+func TestChannel() {
 	links := []string{
 		"https://google.com",
 		"https://golang.org",

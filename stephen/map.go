@@ -1,8 +1,8 @@
-package main
+package stephen
 
 import "fmt"
 
-func getDefaultMap() map[int]string {
+func GetDefaultMap() map[int]string {
 	fmt.Println("")
 	//colors := map[string]string{
 	//	"red": "#ff0000",
@@ -15,7 +15,7 @@ func getDefaultMap() map[int]string {
 	return colors
 }
 
-func printMap(m map[int]string) {
+func PrintMap(m map[int]string) {
 	for key, value := range m {
 		fmt.Printf("Key: %v Value: %v\n", key, value)
 	}

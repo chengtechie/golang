@@ -1,4 +1,4 @@
-package main
+package stephen
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func getUrl(url string) {
+func GetUrl(url string) {
 	response, err := http.Get(url)
 	if err != nil {
 		fmt.Println(err)

@@ -1,4 +1,4 @@
-package main
+package stephen
 
 import "fmt"
 
@@ -6,18 +6,18 @@ type bot interface {
 	getGreeting() string
 }
 
-type chineseBot struct{}
-type englishBot struct{}
+type ChineseBot struct{}
+type EnglishBot struct{}
 
-func printBot(b bot) {
+func PrintBot(b bot) {
 	fmt.Println(b.getGreeting())
 }
 
-func (chineseBot) getGreeting() string {
+func (ChineseBot) getGreeting() string {
 	return "Chinese"
 }
 
-func (englishBot) getGreeting() string {
+func (EnglishBot) getGreeting() string {
 	return "English"
 }
 
@@ -55,7 +55,7 @@ func printShape(s shape) {
 	fmt.Println("Area: ", s.getArea())
 }
 
-func testInterface() {
+func TestInterface() {
 	t := triangle{
 		height: 5,
 		width:  2,
